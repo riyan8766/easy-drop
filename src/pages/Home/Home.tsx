@@ -18,15 +18,16 @@ import imxteam from "../../assets/ImxTeam.png"
 
 
 const slides = [
-  {
-    image: slide1,
-    heading: "Reliable Pick & Drop – On Time, Every Time",
-    subtext: "EasyDrop Brings You Safe, Comfortable Pickup And Drop-Off Service.",
-  },
+
   {
     image: slide2,
     heading: "Curated Adventures, Tailored for You",
     subtext: "From Your Door To Your Destination, EasyDrop Makes Travel Simple.",
+  },
+    {
+    image: slide1,
+    heading: "Reliable Pick & Drop – On Time, Every Time",
+    subtext: "EasyDrop Brings You Safe, Comfortable Pickup And Drop-Off Service.",
   },
 ];
 
