@@ -9,7 +9,7 @@ import Footer from '../../components/Footer/Footer';
 import { AnimatePresence, motion } from "framer-motion";
 import slide1 from "../../assets/slide1.jpg";
 import slide2 from "../../assets/slide2.jpg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import driver from "../../assets/Driver.png"
 import jeep from "../../assets/Jeep.png"
@@ -35,6 +35,14 @@ export default function Home() {
   const [current, setCurrent] = useState(0);
   const nextSlide = () => setCurrent((prev) => (prev + 1) % slides.length);
   const prevSlide = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 5000); 
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
