@@ -24,7 +24,7 @@ const slides = [
     heading: "Curated Adventures, Tailored for You",
     subtext: "From Your Door To Your Destination, EasyDrop Makes Travel Simple.",
   },
-    {
+  {
     image: slide1,
     heading: "Reliable Pick & Drop – On Time, Every Time",
     subtext: "EasyDrop Brings You Safe, Comfortable Pickup And Drop-Off Service.",
@@ -39,7 +39,7 @@ export default function Home() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
-    }, 5000); 
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
