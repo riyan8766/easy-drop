@@ -90,7 +90,7 @@ const Partner = () => {
               transition={{ duration: 1 }}
             >
               <motion.h1
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-[52px] xl:text-[56px] font-semibold leading-tight sm:leading-[48px] xl:leading-[62px]"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-[52px] xl:text-[56px] font-semibold sm:leading-[48px] xl:leading-[62px]"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false }}

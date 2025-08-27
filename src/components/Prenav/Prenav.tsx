@@ -28,7 +28,7 @@ const Prenav: React.FC = () => {
             <span>Instagram</span>
           </a>
           <div className="border-l border-[#FFFFFF1A] h-10"></div>
-          <a href="https://www.linkedin.com/company/pick-and-drop/" target="_blank" className="flex items-center space-x-1 text-xs sm:text-sm">
+          <a href="https://www.youtube.com/@withasimali" target="_blank" className="flex items-center space-x-1 text-xs sm:text-sm">
             <FaYoutube className="text-[16px]" />
             <span>Youtube</span>
           </a>

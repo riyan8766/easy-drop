@@ -15,6 +15,7 @@ interface FormData {
   semester: string;
   guardianName: string;
   guardianContact: string;
+  email: string;
 }
 
 const PickDropForm: React.FC = () => {
@@ -30,6 +31,7 @@ const PickDropForm: React.FC = () => {
     semester: "",
     guardianName: "",
     guardianContact: "",
+    email: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -57,6 +59,7 @@ const PickDropForm: React.FC = () => {
               semester: "",
               guardianName: "",
               guardianContact: "",
+              email: "",
             });
           },
           (error) => {
@@ -198,6 +201,11 @@ const PickDropForm: React.FC = () => {
                   id: "guardianContact",
                   type: "tel",
                 },
+                {
+                  label: "Email",
+                  id: "email",
+                  type: "email",
+                },
               ].map(({ label, id, type }) => (
                 <div key={id} className="flex flex-col">
                   <label
@@ -221,11 +229,11 @@ const PickDropForm: React.FC = () => {
 
             <motion.button
               type="submit"
-              className="w-full sm:w-auto rounded-md bg-gradient-to-b from-[#2E2C80] to-[#2458A4] px-6 py-3 text-white font-semibold shadow-md"
+              className="cursor-pointer w-full sm:w-auto rounded-md bg-gradient-to-b from-[#2E2C80] to-[#2458A4] px-6 py-3 text-white font-semibold shadow-md"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Request Quote
+              Submit Now
             </motion.button>
           </motion.form>
 

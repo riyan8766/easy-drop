@@ -5,25 +5,21 @@ export const PartnerData = [
     {
         name: "Join Easy Drop",
         image: easydrop,
-        // rating: 4,
         review: "Join an Easy Drop to be a partner and start driving with us to provide safe and reliable commuting services."
       },
       {
         name: "Become a partner",
         image: partner,
-        // rating: 4,
         review: "Start earning with Easy Drop. Connect your drivers and upload the required documents to your profile."
       },
       {
         name: "Join Easy Drop",
         image: easydrop,
-        // rating: 4,
         review: "Join an Easy Drop to be a partner and start driving with us to provide safe and reliable commuting services."
       },
       {
         name: "Become a partner",
         image: partner,
-        // rating: 4,
         review: "Start earning with Easy Drop. Connect your drivers and upload the required documents to your profile."
       },
      

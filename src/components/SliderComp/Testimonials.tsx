@@ -142,13 +142,13 @@ const TestimonialsSlider = () => {
         <div className="absolute -bottom-16 left-0 right-0 flex justify-center space-x-4">
           <button
             onClick={handlePrev}
-            className="text-white transition-colors duration-200 bg-gradient-to-b from-[#2E2C80] to-[#2458A4] hover:from-[#252369] hover:to-[#1d4683] w-10 h-10 rounded-full flex items-center justify-center shadow-md"
+            className="cursor-pointer text-white transition-colors duration-200 bg-gradient-to-b from-[#2E2C80] to-[#2458A4] hover:from-[#252369] hover:to-[#1d4683] w-10 h-10 rounded-full flex items-center justify-center shadow-md"
           >
             <FiArrowLeft size={20} />
           </button>
           <button
             onClick={handleNext}
-            className="text-white transition-colors duration-200 bg-gradient-to-b from-[#2E2C80] to-[#2458A4] hover:from-[#252369] hover:to-[#1d4683] w-10 h-10 rounded-full flex items-center justify-center shadow-md"
+            className="cursor-pointer text-white transition-colors duration-200 bg-gradient-to-b from-[#2E2C80] to-[#2458A4] hover:from-[#252369] hover:to-[#1d4683] w-10 h-10 rounded-full flex items-center justify-center shadow-md"
           >
             <FiArrowRight size={20} />
           </button>

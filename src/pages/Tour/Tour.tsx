@@ -65,7 +65,7 @@ const Tour: React.FC = () => {
             {slides[currentSlide].description}
           </p>
 
-          <button className="rounded-md bg-[linear-gradient(180deg,#2E2C80_0%,#2458A4_100%)] px-6 py-3 text-[clamp(12px,1vw,16px)] font-semibold text-white transition-all">
+          <button className="rounded-md bg-[linear-gradient(180deg,#2E2C80_0%,#2458A4_100%)] px-6 py-3 text-[clamp(12px,1vw,16px)] font-semibold text-white transition-all hover:shadow-[0_0_12px_rgba(36,88,164,0.5)] cursor-pointer">
             Make your trip
           </button>
         </div>
@@ -73,7 +73,7 @@ const Tour: React.FC = () => {
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex items-center justify-center gap-4">
           <button
             onClick={prevSlide}
-            className="flex h-[clamp(32px,4vw,40px)] w-[clamp(32px,4vw,40px)] items-center justify-center border border-white rounded-full bg-[linear-gradient(180deg,#2E2C80_0%,#2458A4_100%)] text-white"
+            className="cursor-pointer flex h-[clamp(32px,4vw,40px)] w-[clamp(32px,4vw,40px)] items-center justify-center border border-white rounded-full bg-[linear-gradient(180deg,#2E2C80_0%,#2458A4_100%)] text-white"
             aria-label="Previous slide"
             style={{ padding: "8px" }}
           >
@@ -82,7 +82,7 @@ const Tour: React.FC = () => {
 
           <button
             onClick={nextSlide}
-            className="flex h-[clamp(32px,4vw,40px)] w-[clamp(32px,4vw,40px)] items-center justify-center border border-white rounded-full bg-[linear-gradient(180deg,#2E2C80_0%,#2458A4_100%)] text-white"
+            className="cursor-pointer flex h-[clamp(32px,4vw,40px)] w-[clamp(32px,4vw,40px)] items-center justify-center border border-white rounded-full bg-[linear-gradient(180deg,#2E2C80_0%,#2458A4_100%)] text-white"
             aria-label="Next slide"
             style={{ padding: "8px" }}
           >
@@ -140,7 +140,6 @@ const Tour: React.FC = () => {
               </div>
             </motion.div>
 
-            {/* Other Images */}
             {[
               { src: deosai, alt: "Deosai Lake", height: "h-[240px]" },
               { src: skardu, alt: "Skardu", height: "h-[240px]" },
@@ -172,7 +171,7 @@ const Tour: React.FC = () => {
 
           <div className="text-center mt-12">
             <motion.button
-              className="w-full sm:w-[130px] lg:w-[156px] rounded-md bg-gradient-to-b from-[#2E2C80] to-[#2458A4] px-6 py-4 text-[14px] font-semibold text-white leading-[17.07px] hover:opacity-90 transition-opacity"
+              className="cursor-pointer w-full sm:w-[130px] lg:w-[156px] rounded-md bg-gradient-to-b from-[#2E2C80] to-[#2458A4] px-6 py-4 text-[14px] font-semibold text-white leading-[17.07px] hover:opacity-90 transition-opacity"
               whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.3 }}
               whileInView={{ opacity: 1, y: 0 }}

@@ -1,5 +1,4 @@
 import WhyChooseUs from "../../components/WhyUs/WhyUs";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/swiper-bundle.css";
@@ -17,8 +16,17 @@ import elysian from "../../assets/Images/elysian.png"
 import police from "../../assets/Images/police.png"
 import Footer from '../../components/Footer/Footer';
 import { FaArrowRight } from "react-icons/fa";
+import { useRef } from "react";
 
 const Pick = () => {
+
+  const formRef = useRef<HTMLDivElement | null>(null);
+
+  const handleScroll = () => {
+    formRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  
   const schools = [
     {
       name: "International School",
@@ -79,9 +87,10 @@ const Pick = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-full sm:w-[140px] h-[45px] sm:h-[50px] rounded-md text-[clamp(14px,1vw,18px)] font-medium text-white transition-colors bg-[linear-gradient(180deg,#2E2C80_0%,#2458A4_100%)]"
+              onClick={handleScroll}
+              className="w-full sm:w-[140px] h-[45px] sm:h-[50px] rounded-md text-[clamp(14px,1vw,18px)] font-medium text-white transition-colors bg-[linear-gradient(180deg,#2E2C80_0%,#2458A4_100%)] cursor-pointer"
             >
-              Subscribe
+              Register Now
             </motion.button>
           </motion.div>
 
@@ -184,10 +193,9 @@ const Pick = () => {
         </div>
       </section>
 
-      <div>
+      <div ref={formRef}>
         <PickDropForm />
       </div>
-
 
       <div>
         <WhyChooseUs />
@@ -197,7 +205,6 @@ const Pick = () => {
         <Testimonials />
       </div>
 
-      {/* Our Trusted School Section */}
       <motion.section
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

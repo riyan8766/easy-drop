@@ -1,12 +1,9 @@
 
 import React from "react";
 
-// import blur from "../../../public/icons/blur.png";
 interface SliderProps {
   name: string;
-
   image: string;
-  // rating: number;
   review: string;
 }
 const PartnerCard: React.FC<SliderProps> = ({

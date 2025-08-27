@@ -98,8 +98,6 @@ const Form: React.FC = () => {
               ref={formRef}
               onSubmit={handleSubmit}
               className="space-y-4 sm:space-y-6 w-full lg:w-auto"
-              initial={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.4 }}
               whileInView={{ opacity: 1, y: 0 }}
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
@@ -122,7 +120,7 @@ const Form: React.FC = () => {
                   >
                     <label
                       htmlFor={key}
-                      className="block text-[#666666] text-sm  font-medium"
+                      className="block text-[#666666] text-sm font-medium"
                     >
                       {key.replace(/([A-Z])/g, " $1").trim()}
                     </label>
@@ -187,7 +185,7 @@ const Form: React.FC = () => {
 
               <motion.button
                 type="submit"
-                className="w-full sm:w-auto rounded-md bg-gradient-to-r from-[#2E2C80] to-[#2458A4] px-6 py-3 text-sm font-semibold text-white leading-[17.07px] text-center transition-colors"
+                className="cursor-pointer w-full sm:w-auto rounded-md bg-gradient-to-r from-[#2E2C80] to-[#2458A4] px-6 py-3 text-sm font-semibold text-white leading-[17.07px] text-center transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

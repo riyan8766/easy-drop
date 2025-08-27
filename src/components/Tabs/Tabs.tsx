@@ -81,7 +81,7 @@ export default function Tabs() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className={`group flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-3 text-xs sm:text-base font-medium rounded-md shadow-md transition-all duration-300
+              className={`cursor-pointer group flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-3 text-xs sm:text-base font-medium rounded-md shadow-md transition-all duration-300
             ${
               activeTab === tab.id
                 ? "bg-[linear-gradient(180deg,#2E2C80_0%,#2458A4_100%)] text-white"
@@ -133,7 +133,7 @@ export default function Tabs() {
                   whileTap={{ scale: 0.9 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="px-4 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm border border-[#2C3486] text-[#2C3486] rounded-md shadow-md hover:bg-[linear-gradient(180deg,#2E2C80_0%,#2458A4_100%)] hover:text-white transition-all"
+                  className="cursor-pointer px-4 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm border border-[#2C3486] text-[#2C3486] rounded-md shadow-md hover:bg-[linear-gradient(180deg,#2E2C80_0%,#2458A4_100%)] hover:text-white transition-all"
                 >
                   Request a Quote
                 </motion.button>

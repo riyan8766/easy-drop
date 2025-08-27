@@ -67,7 +67,7 @@ export default function Home() {
                     {slides[current].subtext}
                   </p>
                   <a href="#ContactForm">
-                    <button className="bg-gradient-to-b from-[#2E2C80] to-[#2458A4] px-17 py-4 rounded-lg text-white font-semibold hover:from-[#252369] hover:to-[#1d4683]">
+                    <button className="cursor-pointer bg-gradient-to-b from-[#2E2C80] to-[#2458A4] px-17 py-4 rounded-lg text-white font-semibold hover:from-[#252369] hover:to-[#1d4683]">
                       Contact Us
                     </button>
                   </a>
@@ -75,13 +75,13 @@ export default function Home() {
                   <div className="mt-10 flex items-center gap-3">
                     <button
                       onClick={prevSlide}
-                      className="border-1 border-white text-white rounded-full w-17 h-10 flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.1)] hover:bg-gray-100 transition-all hover:text-black"
+                      className="cursor-pointer border-1 border-white text-white rounded-full w-17 h-10 flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.1)] hover:bg-gray-100 transition-all hover:text-black"
                     >
                       <FaArrowLeft className="w-6 h-4" />
                     </button>
                     <button
                       onClick={nextSlide}
-                      className="border-1 border-white text-white rounded-full w-17 h-10 flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.1)] hover:bg-gray-100 transition-all hover:text-black"
+                      className="cursor-pointer border-1 border-white text-white rounded-full w-17 h-10 flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.1)] hover:bg-gray-100 transition-all hover:text-black"
                     >
                       <FaArrowRight className="w-6 h-4" />
                     </button>
@@ -158,7 +158,7 @@ export default function Home() {
               and customize your schedule effortlessly. Experience smooth, stress-free commutes tailored to your routine.
             </p>
             <button className="w-full sm:w-[130px] h-[45px] sm:h-[47px] rounded-md text-base sm:text-lg font-medium text-white leading-[17.07px] text-center transition-colors bg-[linear-gradient(180deg,#2E2C80_0%,#2458A4_100%)] cursor-pointer">
-              Subscribe
+              Register Now
             </button>
           </motion.div>
 

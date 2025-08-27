@@ -42,7 +42,7 @@ const HomePageLayout: React.FC = () => {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 bg-gradient-to-b from-[#2E2C80] to-[#2458A4] text-white p-3 rounded-full shadow-lg transition-opacity duration-300 opacity-100 hover:opacity-80"
+          className="cursor-pointer fixed bottom-6 right-6 bg-gradient-to-b from-[#2E2C80] to-[#2458A4] text-white p-3 rounded-full shadow-lg transition-opacity duration-300 opacity-100 hover:opacity-80"
         >
           <GoArrowUp size={18} />
         </button>
