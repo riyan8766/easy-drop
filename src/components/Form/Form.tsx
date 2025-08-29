@@ -1,5 +1,4 @@
-import React, { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import formimg from "../../assets/ImagesGallery/formimg.png";
 
@@ -14,7 +13,6 @@ interface FormData {
 }
 
 const Form: React.FC = () => {
-  const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState<FormData>({
     name: "",
     contactNumber: "",
@@ -25,38 +23,35 @@ const Form: React.FC = () => {
     passengers: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const [status, setStatus] = useState<string>("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formRef.current) return;
-    emailjs
-      .sendForm(
-        "service_easydrop",
-        "template_26m6pql",
-        formRef.current,
-        "pQbL6scWwGL52zucs"
-      )
-      .then(
-        (result) => {
-          console.log("Email sent successfully:", result.text);
-          alert("Request sent successfully!");
-          formRef.current?.reset();
+    const form = e.target as HTMLFormElement;
+    const data = new FormData(form);
 
-          setFormData({
-            name: "",
-            contactNumber: "",
-            numberOfDays: "",
-            location: "",
-            vehicleType: "",
-            destination: "",
-            passengers: "",
-          });
-        },
-        (error) => {
-          console.error("Error sending email:", error.text);
-        }
-      );
+    const response = await fetch("https://formspree.io/f/xvgbzylz", {
+      method: "POST",
+      body: data,
+      headers: { Accept: "application/json" },
+    });
+
+    if (response.ok) {
+      setStatus("✅ Request sent successfully!");
+      form.reset();
+      setFormData({
+        name: "",
+        contactNumber: "",
+        numberOfDays: "",
+        location: "",
+        vehicleType: "",
+        destination: "",
+        passengers: "",
+      });
+    } else {
+      setStatus("❌ Oops! Something went wrong.");
+    }
   };
 
   const handleInputChange = (
@@ -77,13 +72,12 @@ const Form: React.FC = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <div className="">
+        <div>
           <div className="mb-8">
             <h2 className="text-2xl sm:text-3xl font-bold">
               Book a
               <span className="bg-gradient-to-b from-[#2E2C80] to-[#2458A4] text-transparent bg-clip-text">
-                {" "}
-                Tour
+                {" "}Tour
               </span>
             </h2>
             <p className="text-gray-600 mt-2 text-sm sm:text-base">
@@ -95,18 +89,17 @@ const Form: React.FC = () => {
 
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 lg:gap-12">
             <motion.form
-              ref={formRef}
               onSubmit={handleSubmit}
               className="space-y-4 sm:space-y-6 w-full lg:w-auto"
               whileInView={{ opacity: 1, y: 0 }}
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                 {[
-                  "Name",
-                  "ContactNumber",
+                  "name",
+                  "contactNumber",
                   "location",
-                  "VehicleType",
-                  "Passengers",
+                  "vehicleType",
+                  "passengers",
                 ].map((key) => (
                   <motion.div
                     key={key}
@@ -174,11 +167,11 @@ const Form: React.FC = () => {
                     className="w-full px-4 sm:px-8 py-3 sm:py-4 bg-[#2838410F] font-normal text-sm text-[#666666] rounded-md focus:outline-none appearance-none"
                   >
                     <option value="">Select Destination</option>
-                    <option value="paris">Gilgit</option>
-                    <option value="new-york">Danyore</option>
-                    <option value="tokyo">City</option>
-                    <option value="dubai">Sultanabad</option>
-                    <option value="rome">oshikhandas</option>
+                    <option value="gilgit">Gilgit</option>
+                    <option value="danyore">Danyore</option>
+                    <option value="city">City</option>
+                    <option value="sultanabad">Sultanabad</option>
+                    <option value="oshikhandas">Oshikhandas</option>
                   </select>
                 </motion.div>
               </div>
@@ -191,6 +184,7 @@ const Form: React.FC = () => {
               >
                 Request Quote
               </motion.button>
+              {status && <p className="mt-4 text-sm">{status}</p>}
             </motion.form>
 
             <motion.div
@@ -206,7 +200,6 @@ const Form: React.FC = () => {
               />
             </motion.div>
           </div>
-
         </div>
       </motion.div>
     </div>
